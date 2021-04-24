@@ -21,7 +21,7 @@
 								<a class="nav-link <?php if($this->uri->segment(1)=="C_produk"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_produk" > <i class="dripicons-store"></i>Product</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_kontak"){echo "active";}?>" href="<?= base_url(); ?>index.php/Ckontak"><i
+								<a class="nav-link <?php if($this->uri->segment(1)=="C_kontak"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_kontak"><i
 										class="far fa-address-book"></i>Contact</a>
 							</li>
 							<!-- <li class="nav-item">

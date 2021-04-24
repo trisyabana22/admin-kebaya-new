@@ -89,7 +89,7 @@
         <div class="header-container d-flex align-items-center">
           <div class="logo mr-auto">
             <h1 class="text-light">
-              <a href="index.html"><span>Kebaya</span></a>
+              <a href="javascript:void(0);"><span><img src="<?= base_url(); ?>assets/home/img/apple-touch-icon.png" class="img-thumbnail" alt=""> Kebaya</span></a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="<?php echo base_url(); ?>assets/home/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -98,13 +98,13 @@
           <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="#header">Beranda</a></li>
-              <li><a href="#about">Tentang Kami</a></li>
               <!-- <li><a href="#services">Services</a></li> -->
               <li><a href="#produk">Produk</a></li>
+              <li><a href="#about">Tentang Kami</a></li>
              
               <li><a href="#contact">Kontak</a></li>
 
-              <li class="get-started"><a href="#about">Get Started</a></li>
+              <!-- <li class="get-started"><a href="#about">Get Started</a></li> -->
             </ul>
           </nav>
           <!-- .nav-menu -->
@@ -119,7 +119,7 @@
       <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
         <h1>Your New Online Presence with Bethany</h1>
         <h2>We are team of talented designers making websites with Bootstrap</h2>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
       </div>
     </section>
     <!-- End Hero -->
@@ -127,31 +127,7 @@
     <main id="main">
      
 
-      <!-- ======= About Section ======= -->
-      <section id="about" class="about">
-        <div class="container">
-          <div class="row content">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-              <h2>Eum ipsam laborum deleniti velitena</h2>
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                qui officia deserunt mollit anim id est laborum
-              </p>
-              <ul>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
-              </ul>
-              <p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
-
+    
  
 
       <!-- ======= Portfolio Section ======= -->
@@ -226,6 +202,32 @@
         </div>
       </section>
       <!-- End Portfolio Section -->
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+        <div class="container">
+          <div class="row content">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+              <h2>Eum ipsam laborum deleniti velitena</h2>
+              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum
+              </p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
+                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
+              </ul>
+              <p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Section -->
+
 
 
       <!-- ======= Contact Section ======= -->
