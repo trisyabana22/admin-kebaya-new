@@ -54,9 +54,6 @@
 													data-animation="bounce" data-target=".edit-kontak">
 													<i class="dripicons-pencil"></i>
 												</button>
-												<button type="button" class="btn btn-danger">
-													<i class="dripicons-trash"></i>
-												</button>
 											</div>
 										</td>
 									</tr>
@@ -98,12 +95,15 @@
 									placeholder="Ketikan Link I Frame " />
 							</div>
 
-							<div class="col-sm-12">
+						
+
+						</div>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
 								<label for="facebook">Edit Alamat <i class="fab fa-facebook"></i></label>
 								<input type="text" class="form-control" id="facebook" placeholder="Ketikan Alamat " />
 							</div>
-
-						</div>
+                        </div>
 						<div class="form-group row">
 							<div class="col-sm-6">
 								<label for="Instagram">Edit No Telepon <i class="fab fa-instagram"></i></label>
