@@ -56,3 +56,53 @@
 			</div>
 			<!-- container -->
 
+
+
+
+<!-- Modal Edit Beranda -->
+<div class="modal fade edit-kontak" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+    <div class="modal-header bg-white">
+        <h5 class="modal-title mt-0" id="exampleModalLabel">
+            Modal Beranda
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body bg-white">
+        <form action="">
+            <div class="form-group">
+                <label for="example-input1-group1">Edit Judul</label>
+                <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Judul">
+            </div>
+            <div class="form-group">
+                <label for="example-input1-group1">Edit Text sub judul</label>
+                <textarea name="" id="" class="form-control" cols="30" rows="3" placeholder="Ketikan Text Sub Judul"></textarea>
+                
+            </div>
+            <div class="form-group">
+                <label for="">Edit Background</label>
+                <input type="file" id="input-file-now-custom-1" class="dropify"
+                data-default-file=".<?= base_url(); ?>assets/pdf/menu.pdf" />
+                <p>File Yang diizinkan: .PNG, JPG,JPEG, </p>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer bg-white">
+        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">
+            Close
+        </button>
+        <button type="button" class="btn btn-primary waves-effect waves-light">
+            Save changes
+        </button>
+    </div>
+</div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- Modal Akhir Edit Beranda -->
