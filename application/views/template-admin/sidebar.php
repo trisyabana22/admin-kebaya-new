@@ -11,18 +11,17 @@
 						</div>
 						<ul class="nav" style="margin-bottom: 3rem">
 							<li class="nav-item ">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_beranda"){echo "active";}?>" href="javascript:void(0)"><i class="dripicons-photo-group"></i>Beranda</a>
+								<a class="nav-link <?php if($this->uri->segment(1)=="C_beranda"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_beranda"><i class="dripicons-monitor"></i>Beranda</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_tentang_kami"){echo "active";}?>" href="tentang-kami.html" ><i
-										class="fas fa-file-image"></i>Tentang kami</a>
+								<a class="nav-link <?php if($this->uri->segment(1)=="C_tentang_kami"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_tentang_kami" ><i
+										class="dripicons-user-id"></i>Tentang kami</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="product.html" > <i class="mdi mdi-pencil-outline"></i>Product</a>
+								<a class="nav-link <?php if($this->uri->segment(1)=="C_produk"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_produk" > <i class="dripicons-store"></i>Product</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="javascript:void(0)" data-toggle="modal"
-									data-animation="bounce" data-target=".edit-tagline"><i
+								<a class="nav-link <?php if($this->uri->segment(1)=="C_kontak"){echo "active";}?>" href="<?= base_url(); ?>index.php/Ckontak"><i
 										class="far fa-address-book"></i>Contact</a>
 							</li>
 							<!-- <li class="nav-item">

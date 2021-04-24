@@ -5,7 +5,7 @@
 
           <div class="row">
             <div class="col-sm-12">
-              <h4>Beranda Menu</h4>
+              <h4>Produk Menu</h4>
             </div>
           </div>
           <!-- end page title end breadcrumb -->
@@ -62,3 +62,135 @@
           <!-- end row -->
         </div>
         <!-- container -->
+
+
+
+
+
+<!-- Modal Edit Social Media-->
+<div class="modal fade edit-social-media" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content">
+    <div class="modal-header bg-white">
+        <h5 class="modal-title mt-0" id="exampleModalLabel">
+            Modal Edit Social Media
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body bg-white">
+        <form action="">
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="Instagram">Edit Instagram <i class="fab fa-instagram"></i></label>
+                    <input type="text" class="form-control" id="Instagram" placeholder="Ketikan Link Profile Instagram " />
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="facebook">Edit Facebook <i class="fab fa-facebook"></i></label>
+                    <input type="text" class="form-control" id="facebook" placeholder="Ketikan Link Profile Facebook " />
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="facebook">Edit Twitter <i class="fab fa-twitter"></i></label>
+                    <input type="text" class="form-control" id="facebook" placeholder="Ketikan Link Profile Twitter " />
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="youtube">Edit Youtube <i class="fab fa-youtube"></i></label>
+                    <input type="text" class="form-control" id="youtube" placeholder="Ketikan Link Profile Youtube " />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="alert alert-info border-0" role="alert">
+                        <strong>Informasi</strong> Jika Tidak ada salah satu dari social media di atas, kosongkan inputannya nya</div>
+                </div>
+                    
+            </div>
+        </form>
+        <!--end form-->
+    </div>
+    <div class="modal-footer bg-white">
+        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">
+            Close
+        </button>
+        <button type="button" class="btn btn-primary waves-effect waves-light">
+            Save changes
+        </button>
+    </div>
+</div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- Modal Akhir Social Media-->
+
+
+<!-- Modal Edit Produk -->
+<div class="modal fade edit-kontak" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-white">
+            <h5 class="modal-title mt-0" id="exampleModalLabel">Modal Produk</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body bg-white">
+            <form action="">
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="example-input1-group1">Edit Jenis Produk</label>
+                  <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Jenis Produk" />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="example-input1-group1">Edit Nama Produk</label>
+                  <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Nama Produk" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-4">
+                  <label for="example-input1-group1">Edit Harga Produk</label>
+                  <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk" />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="example-input1-group1">Edit Bahan Produk</label>
+                  <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Bahan Produk" />
+                </div>
+                <div class="col-md-4">
+                  <label for="example-input1-group1">Edit Stok Produk</label>
+                  <input type="number" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Stok Produk" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label for="example-input1-group1">Edit Catatan Produk</label>
+                  <textarea name="" id="" class="form-control" cols="30" rows="3" placeholder="Ketikan Deskripsi Produk"></textarea>
+                  <!-- <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Deskripsi Produk " /> -->
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer bg-white">
+            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary waves-effect waves-light">Save changes</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- Modal Akhir Edit Produk -->
