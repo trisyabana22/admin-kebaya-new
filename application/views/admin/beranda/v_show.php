@@ -39,7 +39,7 @@
 										<td>Edinburgh</td>
 										<td>
 											<button type="button" class="btn btn-primary" data-toggle="modal"
-											data-animation="bounce" data-target=".edit-kontak">
+											data-animation="bounce" data-target=".edit-beranda">
 												<i class="dripicons-pencil"></i>
 											</button>
 										</td>
@@ -60,7 +60,7 @@
 
 
 <!-- Modal Edit Beranda -->
-<div class="modal fade edit-kontak" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+<div class="modal fade edit-beranda" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
 aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">

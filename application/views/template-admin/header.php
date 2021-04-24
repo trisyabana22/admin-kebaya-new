@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Admin Dashboard E Cafe</title>
+	<title>Admin Dashboard Kebaya</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="A premium admin dashboard template by Mannatthemes" name="description" />
 	<meta content="Mannatthemes" name="author" />
@@ -48,7 +48,7 @@ transform-origin: left top;
 	<div class="topbar">
 		<!-- LOGO -->
 		<div class="topbar-left">
-			<a href="../analytics/analytics-index.html" class="logo">
+			<a href="javascript:void(0);" class="logo">
 				<span>
 					<img src="<?= base_url(); ?>assets/admin/images/logo-sm.png" alt="logo-small" class="logo-sm" />
 				</span>
