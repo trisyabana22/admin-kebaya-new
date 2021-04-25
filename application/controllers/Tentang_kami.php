@@ -1,15 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_tentang_kami extends CI_Controller {
-    function __construct()
-    {
-        parent::__construct();
-        // $this->load->database();
-        // $this->load->library([ 'form_validation']);
-        $this->load->helper(['url', 'language']);
-        // if($this->M_login->isNotLogin()) redirect(site_url('C_login'));
-    }
+class Tentang_kami extends CI_Controller
+{
+	function __construct()
+	{
+		parent::__construct();
+		// $this->load->database();
+		// $this->load->library([ 'form_validation']);
+		$this->load->helper(['url', 'language']);
+		// if($this->M_login->isNotLogin()) redirect(site_url('C_login'));
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -26,11 +27,10 @@ class C_tentang_kami extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{   
-        $this->load->view('template-admin/header');
-        $this->load->view('template-admin/sidebar');
+	{
+		$this->load->view('template-admin/header');
+		$this->load->view('template-admin/sidebar');
 		$this->load->view('admin/tentang-kami/v_show');
-        $this->load->view('template-admin/footer');
-
+		$this->load->view('template-admin/footer');
 	}
 }
