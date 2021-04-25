@@ -30,9 +30,10 @@ class Home extends CI_Controller
 		$this->load->view('home/v_show', $data);
 	}
 
-	public function produk($id_kategori = '', $nama_produk = '')
+	public function produk($id_kategori = '', $nama_produk = '', $urutan = '')
 	{
-		$where = " where id_kategori like '%" . $id_kategori . "%' and nama_produk like '%" . $nama_produk . "%'";
+		$urutan = str_replace("-", " ", $urutan);
+		$where = " where id_kategori like '%" . $id_kategori . "%' and nama_produk like '%" . $nama_produk . "%' " . $urutan;
 		$data['produk'] = $this->M_produk->v_all_produk($where);
 		foreach ($data['produk'] as $produk) {
 			$stok = $this->M_produk->v_all_stok(" where id_produk='" . $produk['id_produk'] . "' and jumlah_stok > 0");
