@@ -11,17 +11,20 @@
 						</div>
 						<ul class="nav" style="margin-bottom: 3rem">
 							<li class="nav-item ">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_beranda"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_beranda"><i class="dripicons-monitor"></i>Beranda</a>
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Setting_toko' ? 'active': '' ?>" href="<?= base_url(); ?>Setting_toko"><i class="dripicons-gear"></i>Setting Toko</a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Beranda' ? 'active': '' ?>" href="<?= base_url(); ?>Beranda"><i class="dripicons-monitor"></i>Beranda</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_tentang_kami"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_tentang_kami" ><i
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Produk' ? 'active': '' ?>" href="<?= base_url(); ?>Produk" > <i class="dripicons-store"></i>Product</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Tentang_kami' ? 'active': '' ?>" href="<?= base_url(); ?>Tentang_kami" ><i
 										class="dripicons-user-id"></i>Tentang kami</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_produk"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_produk" > <i class="dripicons-store"></i>Product</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link <?php if($this->uri->segment(1)=="C_kontak"){echo "active";}?>" href="<?= base_url(); ?>index.php/C_kontak"><i
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Kontak' ? 'active': '' ?>" href="<?= base_url(); ?>Kontak"><i
 										class="far fa-address-book"></i>Contact</a>
 							</li>
 							<!-- <li class="nav-item">
