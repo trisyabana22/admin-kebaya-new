@@ -4,11 +4,14 @@ $(document).ready(function () {
 	function getProduk() {
 		let id_kategori = $('#kategori-search').val();
 		let nama_produk = $('#produk-search').val();
+		let urutan = $('#urutkan').val();
+		$('#pencarian').html(nama_produk);
+		if (nama_produk == '') {
+			nama_produk = '_'
+		}
 		let str = nama_produk.replace(' ', '_');
 
-		$('#pencarian').html(`load...`);
-		$.getJSON(`home/produk/${id_kategori}/${str}`, (data) => {
-			$('#pencarian').html(nama_produk);
+		$.getJSON(`home/produk/${id_kategori}/${str}/${urutan}`, (data) => {
 			$('#load-produk').hide();
 			$('#produkna').html('');
 			if (data.length > 0) {
@@ -46,6 +49,9 @@ $(document).ready(function () {
 	})
 
 	$('#produk-search').on('keyup', () => {
+		getProduk();
+	});
+	$('#urutkan').on('change', () => {
 		getProduk();
 	});
 });

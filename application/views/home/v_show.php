@@ -163,10 +163,22 @@
             </ul>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-9 col-sm-6 col-md-8 col-6 mt-4" data-aos="fade-up" data-aos-delay="200">
+            <spann id="kategori">All</spann>
+            <spann id="pencarian"></spann>
 
-        <div class="col-lg-12 mt-4" data-aos="fade-up" data-aos-delay="200">
-          <spann id="kategori">All</spann>
-          <spann id="pencarian"></spann>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-md-4 col-6 mt-4" data-aos="fade-up" data-aos-delay="200">
+            <select class="form-control" id="urutkan">
+              <option value="">Urutkan</option>
+              <option value="ORDER-BY-nama_produk-asc">Berdasarkan Nama</option>
+              <option value="ORDER-BY-harga_produk-asc">Harga Terendah</option>
+              <option value="ORDER-BY-harga_produk-desc">Harga Tertinggi</option>
+              <option value="ORDER-BY-date_create-asc">Produk Terbaru</option>
+              <option value="ORDER-BY-date_create-desc">Produk Terlama</option>
+            </select>
+          </div>
         </div>
         <!-- bawaan tri -->
         <div class="col-lg-3 col-sm-6 col-md-4 col-6" hidden>
