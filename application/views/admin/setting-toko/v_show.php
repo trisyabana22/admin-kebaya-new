@@ -5,7 +5,7 @@
 
 				<div class="row">
 					<div class="col-sm-12">
-						<h4>Beranda Menu</h4>
+						<h4>Setting Toko Menu</h4>
 					</div>
 				</div>
 				<!-- end page title end breadcrumb -->
@@ -14,11 +14,9 @@
 						<div class="card">
 							<div class="card-body">
 
-								<h4 class="mt-0 header-title"><b>Judul :</b></h4>
+								<h4 class="mt-0 header-title"><b>Nama Toko :</b></h4>
 								<h4 class="mt-0 header-title">Toko Kebaya Melati</h4>
-								<h4 class="mt-0 header-title"><b>Text :</b> </h4>
-								<h4 class="mt-0 header-title"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur sapiente, sequi iusto repellat dolore amet aliquid officia quos laudantium doloribus totam exercitationem labore similique numquam? Praesentium nesciunt harum repellat perspiciatis? </h4>
-								<h4 class="mt-0 header-title"><b>background :</b></h4>
+								<h4 class="mt-0 header-title"><b>Logo Toko :</b> </h4>
 								<h4 class="mt-0 header-title"><img src="<?= base_url(); ?>assets/home/img/bg/bg.jpg" style="width:250px;height:150px;object-fit:cover;" alt=""></h4>
 								<h4>
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-animation="bounce" data-target=".edit-beranda"><i class="dripicons-pencil"></i> Edit </button>
@@ -85,16 +83,11 @@ aria-hidden="true">
     <div class="modal-body bg-white">
         <form action="">
             <div class="form-group">
-                <label for="example-input1-group1">Edit Judul</label>
-                <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Judul">
+                <label for="example-input1-group1">Edit Nama Toko</label>
+                <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Nama Toko">
             </div>
             <div class="form-group">
-                <label for="example-input1-group1">Edit Text sub judul</label>
-                <textarea name="" id="" class="form-control" cols="30" rows="3" placeholder="Ketikan Text Sub Judul"></textarea>
-                
-            </div>
-            <div class="form-group">
-                <label for="">Edit Background</label>
+                <label for="">Edit Logo Toko</label>
                 <input type="file" id="input-file-now-custom-1" class="dropify"
                 data-default-file=".<?= base_url(); ?>assets/pdf/menu.pdf" />
                 <p>File Yang diizinkan: .PNG, JPG,JPEG, </p>
