@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2021 pada 04.56
+-- Waktu pembuatan: 25 Apr 2021 pada 05.01
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 7.4.16
 
@@ -75,14 +75,14 @@ CREATE TABLE `produk` (
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`, `gambar_produk`, `bahan`, `date_create`) VALUES
 (16, 1, 'Batik A', 10000, '1.jpg', 'kertas', '2021-04-25'),
-(17, 1, 'Batik B', 12000, '1.jpg', 'kertas', '2021-04-25'),
-(18, 1, 'Batik C', 10400, '1.jpg', 'kertas', '2021-04-25'),
+(17, 1, 'Batik B', 12000, '2.jpg', 'kertas', '2021-04-25'),
+(18, 1, 'Batik C', 10400, '3.jpg', 'kertas', '2021-04-25'),
 (19, 2, 'Kebaya A', 12000, '1.jpg', 'kertas', '2021-04-25'),
-(20, 2, 'Kebaya B', 13000, '1.jpg', 'kertas', '2021-04-25'),
-(21, 2, 'Kebaya C', 15000, '1.jpg', 'kertas', '2021-04-25'),
-(22, 2, 'Kebaya D', 17000, '1.jpg', 'kertas', '2021-04-25'),
-(23, 3, 'Jaket A', 10800, '1.jpg', 'kertas', '2021-04-25'),
-(24, 3, 'Jaket B', 18900, '1.jpg', 'kertas', '2021-04-25');
+(20, 2, 'Kebaya B', 13000, '2.jpg', 'kertas', '2021-04-25'),
+(21, 2, 'Kebaya C', 15000, '3.jpg', 'kertas', '2021-04-25'),
+(22, 2, 'Kebaya D', 17000, '4.jpg', 'kertas', '2021-04-25'),
+(23, 3, 'Jaket A', 10800, '4.jpg', 'kertas', '2021-04-25'),
+(24, 3, 'Jaket B', 18900, '5.jpg', 'kertas', '2021-04-25');
 
 -- --------------------------------------------------------
 
