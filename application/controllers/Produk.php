@@ -30,4 +30,12 @@ class Produk extends CI_Controller
 		$this->load->view('admin/produk/v_show');
 		$this->load->view('template-admin/footer');
 	}
+
+	public function add()
+	{
+		$this->load->view('template-admin/header');
+		$this->load->view('template-admin/sidebar');
+		$this->load->view('admin/produk/v_show_add');
+		$this->load->view('template-admin/footer');
+	}
 }
