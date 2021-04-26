@@ -66,10 +66,10 @@
                         <td><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore odit ipsum blanditiis accusantium voluptate deleniti libero beatae, veniam placeat aut fugiat animi consectetur, officiis possimus sint, neque perspiciatis culpa!</span> </td>
                         <td>
                           <div class="button-group">
-                            <a href="<?= base_url(); ?>Produk/add" class="btn btn-primary">
+                            <a href="<?= base_url(); ?>Produk/add" class="btn btn-sm btn-primary">
                               <i class="dripicons-pencil"></i>
                             </a>
-                            <button type="button" class="btn btn-danger">
+                            <button type="button" class="btn btn-sm btn-danger">
                               <i class="dripicons-trash"></i>
                             </button>
                           </div>
