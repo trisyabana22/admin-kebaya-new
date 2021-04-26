@@ -13,7 +13,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="mt-0 header-title">tes<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-animation="bounce" data-target=".tambah-produk">Tambah Stok</button></h4>
+                  <h4 class="mt-0 header-title">Tambah Produk<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-animation="bounce" data-target=".tambah-produk">Tambah Stok</button></h4>
                   <form action="">
                 <div class="form-group row">
                     <div class="col-md-6">
