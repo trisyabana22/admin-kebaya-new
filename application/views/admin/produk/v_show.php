@@ -23,14 +23,14 @@
                   <table id="datatable" class="table table-bordered dt-responsive no-wrap" style="border-collapse: collapse; border-spacing: 0; width: 100%">
                     <thead>
                       <tr>
-                        <th style="width: 5%;">Jenis Produk</th>
-                        <th style="width: 5%;">Nama Produk</th>
-                        <th style="width: 30%;">Harga</th>
-                        <th style="width: 5%;">Bahan</th>
-                        <th style="width: 30%;">Stok</th>
+                        <th style="width: 10%;">Jenis Produk</th>
+                        <th style="width: 10%;">Nama Produk</th>
+                        <th style="width: 20%;">Harga</th>
+                        <th style="width: 10%;">Bahan</th>
+                        <th style="width: 20%;">Stok</th>
                         <th style="width: 10%;">Gambar</th>
-                        <th style="width: 2%;">Catatan</th>
-                        <th style="width: 5%;">Aksi</th>
+                        <th style="width: 10%;">Catatan</th>
+                        <th style="width: 10%;">Aksi</th>
                       </tr>
                     </thead>
 
@@ -66,9 +66,9 @@
                         <td><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore odit ipsum blanditiis accusantium voluptate deleniti libero beatae, veniam placeat aut fugiat animi consectetur, officiis possimus sint, neque perspiciatis culpa!</span> </td>
                         <td>
                           <div class="button-group">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-animation="bounce" data-target=".edit-produk">
+                            <a href="<?= base_url(); ?>Produk/add" class="btn btn-primary">
                               <i class="dripicons-pencil"></i>
-                            </button>
+                            </a>
                             <button type="button" class="btn btn-danger">
                               <i class="dripicons-trash"></i>
                             </button>
