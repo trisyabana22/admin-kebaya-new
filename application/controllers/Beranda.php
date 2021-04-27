@@ -25,7 +25,8 @@ class Beranda extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('template-admin/header');
+		$data = $this->M_toko->v_toko('1');
+		$this->load->view('template-admin/header', $data);
 		$this->load->view('template-admin/sidebar');
 		$this->load->view('admin/beranda/v_show');
 		$this->load->view('template-admin/footer');
