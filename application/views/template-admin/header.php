@@ -1,3 +1,9 @@
+<?php
+if (!$this->session->userdata('tokoaditdantri')) {
+	$this->session->set_flashdata('message', '<div class="alert alert-warning  alert-dismissable" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Anda sudah login!</div>');
+	redirect('Login/directpage');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +22,7 @@
 	<link href="<?= base_url(); ?>assets/admin/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/admin/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 	<!-- Responsive datatable examples -->
-	<link href="<?= base_url(); ?>assets/admin/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
+	<link href="<?= base_url(); ?>assets/admin/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 	<!-- Akhir data tables -->
 
 	<!-- App css -->
@@ -79,11 +85,9 @@ transform-origin: left top;
 		<nav class="navbar-custom">
 			<ul class="list-unstyled float-right mb-0">
 				<li class="dropdown">
-					<a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
-						href="#" role="button" aria-haspopup="false" aria-expanded="false">
+					<a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
 						<img src="<?= base_url(); ?>assets/admin/images/users/test.jpeg" alt="profile-user" class="rounded-circle" />
-						<span class="ml-1 nav-user-name hidden-sm" style="color: black">Harry - De Top <i
-								class="mdi mdi-chevron-down"></i>
+						<span class="ml-1 nav-user-name hidden-sm" style="color: black">Harry - De Top <i class="mdi mdi-chevron-down"></i>
 						</span>
 					</a>
 
