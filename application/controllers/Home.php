@@ -41,7 +41,7 @@ class Home extends CI_Controller
 				'id_produk' =>  $produk['id_produk'],
 				'id_kategori' =>  $produk['id_kategori'],
 				'nama_produk' =>  $produk['nama_produk'],
-				'harga_produk' =>  $produk['harga_produk'],
+				'harga_produk' =>  number_format((float)$produk['harga_produk'], 0, ',', '.'),
 				'gambar_produk' =>  $produk['gambar_produk'],
 				'bahan' =>  $produk['bahan'],
 				'stok' =>  $stok,

@@ -1,13 +1,29 @@
 $(document).ready(function () {
 	getProduk();
 
-	function getProduk() {
-		let id_kategori = $("#kategori-search").val();
-		let nama_produk = $("#produk-search").val();
-		let urutan = $("#urutkan").val();
-		$("#pencarian").html(nama_produk);
-		if (nama_produk == "") {
-			nama_produk = "_";
+	function getProduk(params) {
+		$('#produkna').html(`<div class="col-lg-12 col-sm-12 col-md-12 col-12 mt-4 text-center">
+		<div class="spinner-border text-success" role="status">
+  			<span class="sr-only">Loading...</span>
+		</div>
+	  </div>`);
+		let i = 0;
+		setInterval(function () {
+			i++;
+			if (i == 1) {
+				getProduk2();
+			}
+		}, 1000);
+	}
+
+
+	function getProduk2() {
+		let id_kategori = $('#kategori-search').val();
+		let nama_produk = $('#produk-search').val();
+		let urutan = $('#urutkan').val();
+		$('#pencarian').html(nama_produk);
+		if (nama_produk == '') {
+			nama_produk = '_'
 		}
 		let str = nama_produk.replace(" ", "_");
 
@@ -33,8 +49,7 @@ $(document).ready(function () {
 								  </div>`);
 				});
 			} else {
-				$("#produkna")
-					.html(`<div class="col-lg-12 col-sm-12 col-md-12 col-12 text-center">
+				$('#produkna').html(`<div class="col-lg-12 col-sm-12 col-md-12 col-12 mt-4 text-center">
 				<h4>Produk tidak tersedia :(</h4>
 			  </div>`);
 			}
