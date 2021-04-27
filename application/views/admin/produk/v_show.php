@@ -49,11 +49,7 @@
                         <td>Katun Anti Grah</td>
                         <td>
                           <h6><b>Stok Ukuran S</b> 30</h6>
-                          <h6><b>Stok Ukuran M</b> 40</h6>
-                          <h6><b>Stok Ukuran L</b> 12</h6>
-                          <h6><b>Stok Ukuran XL</b> 10</h6>
-                          <h6><b>Stok Ukuran XXL</b> 8</h6>
-                          <h6><b>Stok Ukuran XXL</b> 78</h6>
+                          
                         </td>
                         <td>
                           <h6>Gambar Utama :</h6>

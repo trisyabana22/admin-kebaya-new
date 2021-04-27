@@ -29,18 +29,87 @@
 
                 <div class="form-group row">
                     <div class="col-md-4">
-                    <label for="example-input1-group1">Edit Harga Produk</label>
-                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk" />
+                      <label for="example-input1-group1">Edit Harga Produk Ukuran S</label>
+                      <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk S" />
                     </div>
 
                     <div class="col-md-4">
+                      <label for="example-input1-group1">Edit Harga Produk Ukuran M</label>
+                      <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk M" />
+                    </div>
+
+                    
+                    <div class="col-md-4">
+                      <label for="example-input1-group1">Edit Harga Produk Ukuran L</label>
+                      <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk L" />
+                    </div>
+
+                    
+
+                    
+
+                    <!-- <div class="col-md-4">
                     <label for="example-input1-group1">Edit Bahan Produk</label>
                     <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Bahan Produk" />
                     </div>
                     <div class="col-md-4">
                     <label for="example-input1-group1">Edit Stok Produk</label>
                     <input type="number" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Stok Produk" />
-                    </div>
+                    </div> -->
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Harga Produk Ukuran XL</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk XL" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Harga Produk Ukuran XXL</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk XXL" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Harga Produk Ukuran XXXL</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk XXXL" />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+
+                <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Stok Produk Ukuran XL</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Stok Produk XL" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Stok Produk Ukuran XXL</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Stok Produk XXL" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Stok Produk Ukuran XXXL</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Stok Produk XXXL" />
+                  </div>
+                
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Harga Produk Ukuran S</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk S" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Harga Produk Ukuran M</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk M" />
+                  </div>
+
+                  
+                  <div class="col-md-4">
+                    <label for="example-input1-group1">Edit Harga Produk Ukuran L</label>
+                    <input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Harga Produk L" />
+                  </div>
                 </div>
 
                 <div class="form-group row">
