@@ -21,10 +21,10 @@
 
 								<h4 class="mt-0 header-title"><b>Judul :</b></h4>
 								<h4 class="mt-0 header-title">Toko Kebaya Melati</h4>
-								<h4 class="mt-0 header-title"><b>Text :</b> </h4>
-								<h4 class="mt-0 header-title"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur sapiente, sequi iusto repellat dolore amet aliquid officia quos laudantium doloribus totam exercitationem labore similique numquam? Praesentium nesciunt harum repellat perspiciatis? </h4>
-								<h4 class="mt-0 header-title"><b>background :</b></h4>
-								<h4 class="mt-0 header-title"><img src="<?= base_url(); ?>assets/home/img/bg/bg.jpg" style="width:250px;height:150px;object-fit:cover;" alt=""></h4>
+								<h4 class="mt-0 header-title"><b>Sub Judul :</b> </h4>
+								<h4 class="mt-0 header-title"> aaaaa</h4>
+								<h4 class="mt-0 header-title"><b>Text :</b></h4>
+								<h4 class="mt-0 header-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, voluptatem.</h4>
 								<h4>
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-animation="bounce" data-target=".edit-tentang-kami"><i class="dripicons-pencil"></i> Edit </button>
 								</h4>
@@ -59,7 +59,12 @@
 							<input type="text" id="example-input1-group1" name="example-input1-group1" class="form-control" placeholder="Ketikan Judul">
 						</div>
 						<div class="form-group">
-							<label for="example-input1-group1">Edit Text sub judul</label>
+							<label for="example-input1-group1">Edit sub judul</label>
+							<input name="" id="" class="form-control" placeholder="Ketikan Text Sub Judul" />
+							
+						</div>
+						<div class="form-group">
+							<label for="example-input1-group1">Edit Text</label>
 							<textarea name="" id="" class="form-control" cols="30" rows="3" placeholder="Ketikan Text Sub Judul"></textarea>
 							
 						</div>
