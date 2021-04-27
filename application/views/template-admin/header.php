@@ -1,7 +1,7 @@
 <?php
 if (!$this->session->userdata('tokoaditdantri')) {
 	$this->session->set_flashdata('message', '<div class="alert alert-warning  alert-dismissable" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Anda sudah login!</div>');
-	redirect('Login/directpage');
+	redirect('Login');
 }
 ?>
 <!DOCTYPE html>
@@ -47,6 +47,21 @@ if (!$this->session->userdata('tokoaditdantri')) {
 transform-origin: left top;
 		}
 	</style> -->
+	<style>
+		.line-clamp {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		.line-clamp-1 {
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	</style>
 </head>
 
 <body class="dark-topbar">

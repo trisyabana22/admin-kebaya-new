@@ -90,7 +90,7 @@
 					<form action="">
 						<div class="form-group row">
 							<div class="col-sm-12">
-								<label for="Instagram">Edit Link I Frame <i class="fab fa-instagram"></i></label>
+								<label for="Instagram">Edit Link I Frame </label>
 								<input type="text" class="form-control" id="Instagram"
 									placeholder="Ketikan Link I Frame " />
 							</div>
@@ -100,19 +100,19 @@
 						</div>
                         <div class="form-group row">
                             <div class="col-sm-12">
-								<label for="facebook">Edit Alamat <i class="fab fa-facebook"></i></label>
+								<label for="facebook">Edit Alamat </label>
 								<input type="text" class="form-control" id="facebook" placeholder="Ketikan Alamat " />
 							</div>
                         </div>
 						<div class="form-group row">
 							<div class="col-sm-6">
-								<label for="Instagram">Edit No Telepon <i class="fab fa-instagram"></i></label>
+								<label for="Instagram">Edit No Telepon </i></label>
 								<input type="text" class="form-control" id="Instagram"
 									placeholder="Ketikan No Telepon " />
 							</div>
 
 							<div class="col-sm-6">
-								<label for="facebook">Edit No Whatsapp <i class="fab fa-facebook"></i></label>
+								<label for="facebook">Edit No Whatsapp <i class="fab fa-whatsapp"></i></label>
 								<input type="text" class="form-control" id="facebook"
 									placeholder="Ketikan no Whatsapp " />
 							</div>

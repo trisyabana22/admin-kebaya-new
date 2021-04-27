@@ -81,12 +81,13 @@ class Home extends CI_Controller
 
 	public function load_jenis_produk($id_produk = '')
 	{
-		$dataProduk = $this->M_produk->v_all_kategori();
+		$dataProduk = $this->M_produk->group_produk();
 		$no = 0;
 		foreach ($dataProduk as $produk) {
 			$data['table'][] = [
 				$no,
 				$produk['nama_kategori'],
+				$produk['total'],
 				'button',
 			];
 
