@@ -40,6 +40,20 @@ class M_produk extends CI_Model
         return   $query->result_array();
     }
 
+    function v_all_gambar($where = '')
+    {
+        $query = $this->db->query("SELECT * FROM gambar_produk gbr inner join produk on gbr.id_produk=produk.id_produk " . $where . "");
+
+        return   $query->result_array();
+    }
+
+    function v_all_produk_detail($where = '')
+    {
+        $query = $this->db->query("SELECT * FROM stok inner join produk on stok.id_produk=produk.id_produk  inner join kategori on produk.id_kategori=kategori.id_kategori " . $where . "");
+
+        return   $query->result_array();
+    }
+
     function v_all_stok($where = '')
     {
         $query = $this->db->query("SELECT * FROM stok " . $where . "");

@@ -120,7 +120,7 @@
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1><?= $judul; ?></h1>
       <h2><?= $sub_judul; ?></h2>
-      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
+      <a href="#produk" class="btn-get-started scrollto">Produk Kami</a>
     </div>
   </section>
   <!-- End Hero -->
