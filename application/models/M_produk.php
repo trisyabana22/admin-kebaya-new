@@ -40,6 +40,13 @@ class M_produk extends CI_Model
         return   $query->result_array();
     }
 
+    function group_produk($where = '')
+    {
+        $query = $this->db->query("SELECT k.nama_kategori,count(p.id_produk) total FROM produk p right join kategori k on p.id_kategori=k.id_kategori " . $where . " Group By nama_kategori");
+
+        return   $query->result_array();
+    }
+
     function v_all_gambar($where = '')
     {
         $query = $this->db->query("SELECT * FROM gambar_produk gbr inner join produk on gbr.id_produk=produk.id_produk " . $where . "");
