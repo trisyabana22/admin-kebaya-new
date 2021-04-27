@@ -37,7 +37,6 @@
   <style>
     @media (min-width: 768px) {
       .bg-food {
-        background-image: url("<?= base_url(); ?>assets/home/img//kebaya/5.jpg");
         -webkit-border-radius: 5px 5px 0px 0px;
         -moz-border-radius: 5px 5px 0px 0px;
         border-radius: 5px 5px 0px 0px;
@@ -184,8 +183,8 @@
         <div class="col-lg-3 col-sm-6 col-md-4 col-6" hidden>
           <a href="<?= base_url('home/detail'); ?>" style="color: #444444">
             <div class="card mt-4 shadow-sm border border-white sudut">
-              <div>
-                <img class="bg-food" src="<?= base_url(); ?>assets/home/img/produk/5.jpg">
+              <div class="bg-food" style="background-image: url('<?= base_url(); ?>assets/home/img//kebaya/5.jpg');">
+                <!-- <img class="bg-food" src="<?= base_url(); ?>assets/home/img/produk/5.jpg"> -->
               </div>
               <!-- <img class="card-img-top" src="<?= base_url(); ?>assets/home/img/kebaya/1.jpg" alt="Card image cap" /> -->
               <div class="card-body">
@@ -214,7 +213,7 @@
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
             <h2><?= $judul; ?></h2>
-            <h3><?= $sub_judul; ?></h3>
+            <h4><?= $sub_judul; ?></h4>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
             <p>

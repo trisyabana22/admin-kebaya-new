@@ -20,33 +20,52 @@
 									the construction function: <code>$().DataTable();</code>.
 								</p> -->
                 
-                  <table id="datatable" class="table table-bordered dt-responsive table-responsive" style="border-collapse: collapse; border-spacing: 0; width: 100%">
+                  <table id="datatable" class="table table-bordered dt-responsive no-wrap" style="border-collapse: collapse; border-spacing: 0; width: 100%">
                     <thead>
                       <tr>
-                        <th>Jenis Produk</th>
-                        <th>Nama Produk</th>
-                        <th>Harga</th>
-                        <th>Bahan</th>
-                        <th>Stok</th>
-                        <th>Catatan</th>
-                        <th>Aksi</th>
+                        <th style="width: 10%;">Jenis Produk</th>
+                        <th style="width: 10%;">Nama Produk</th>
+                        <th style="width: 20%;">Harga</th>
+                        <th style="width: 10%;">Bahan</th>
+                        <th style="width: 20%;">Stok</th>
+                        <th style="width: 10%;">Gambar</th>
+                        <th style="width: 10%;">Catatan</th>
+                        <th style="width: 10%;">Aksi</th>
                       </tr>
                     </thead>
 
                     <tbody>
                       <tr>
-                        <td>sdad</td>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>a</td>
-                        <td>s</td>
-                        <td>sa</td>
+                        <td>Kebaya</td>
+                        <td>Kebaya Merah </td>
+                        <td >
+                          <h6><b>Ukuran S</b> Rp 25.000</h6>
+                          <h6><b>Ukuran M</b> Rp 30.000</h6>
+                          <h6><b>Ukuran L</b> Rp 35.000</h6>
+                          <h6><b>Ukuran XL</b> Rp 40.000</h6>
+                          <h6><b>Ukuran XXL</b> Rp 45.000</h6>
+                          <h6><b>Ukuran XXL</b> Rp 55.000</h6>
+                        </td>
+                        <td>Katun Anti Grah</td>
+                        <td>
+                          <h6><b>Stok Ukuran S</b> 30</h6>
+                          
+                        </td>
+                        <td>
+                          <h6>Gambar Utama :</h6>
+                          <img src="<?= base_url(); ?>assets/home/img/produk/1.jpg" style="width:90px;height:50px;object-fit:cover;" alt="">
+                          <h6>Gambar Samping :</h6>
+                          <img src="<?= base_url(); ?>assets/home/img/produk/2.jpg" style="width:90px;height:50px;object-fit:cover;" alt="">
+                          <h6>Gambar Belakang :</h6>
+                          <img src="<?= base_url(); ?>assets/home/img/produk/3.jpg" style="width:90px;height:50px;object-fit:cover;" alt="">
+                        </td>
+                        <td><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore odit ipsum blanditiis accusantium voluptate deleniti libero beatae, veniam placeat aut fugiat animi consectetur, officiis possimus sint, neque perspiciatis culpa!</span> </td>
                         <td>
                           <div class="button-group">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-animation="bounce" data-target=".edit-produk">
+                            <a href="<?= base_url(); ?>Produk/add" class="btn btn-sm btn-primary">
                               <i class="dripicons-pencil"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger">
+                            </a>
+                            <button type="button" class="btn btn-sm btn-danger">
                               <i class="dripicons-trash"></i>
                             </button>
                           </div>
