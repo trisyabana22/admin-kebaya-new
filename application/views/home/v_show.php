@@ -213,7 +213,7 @@
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
             <h2><?= $judul; ?></h2>
-            <h3><?= $sub_judul; ?></h3>
+            <h4><?= $sub_judul; ?></h4>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
             <p>

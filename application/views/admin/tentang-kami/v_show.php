@@ -13,38 +13,21 @@
 						<div class="card">
 							<div class="card-body">
 
-								<h4 class="mt-0 header-title">Tabel Tentang kami</h4>
+								
 								<!-- <p class="text-muted mb-3">DataTables has most features enabled by
 									default, so all you need to do to use it with your own tables is to call
 									the construction function: <code>$().DataTable();</code>.
 								</p> -->
 
-								<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-									<thead>
-									<tr>
-										<th>Judul</th>
-										<th>Text</th>
-										<th>Aksi</th>
-										
-									</tr>
-									</thead>
-
-
-									<tbody>
-									<tr>
-										<td>Tiger Nixon</td>
-										<td>System Architect</td>
-										<td>
-											<button type="button" class="btn btn-primary" data-toggle="modal"
-											data-animation="bounce" data-target=".edit-kontak">
-												<i class="dripicons-pencil"></i>
-											</button>
-										</td>
-										
-									</tr>
-									
-									</tbody>
-								</table>
+								<h4 class="mt-0 header-title"><b>Judul :</b></h4>
+								<h4 class="mt-0 header-title">Toko Kebaya Melati</h4>
+								<h4 class="mt-0 header-title"><b>Text :</b> </h4>
+								<h4 class="mt-0 header-title"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur sapiente, sequi iusto repellat dolore amet aliquid officia quos laudantium doloribus totam exercitationem labore similique numquam? Praesentium nesciunt harum repellat perspiciatis? </h4>
+								<h4 class="mt-0 header-title"><b>background :</b></h4>
+								<h4 class="mt-0 header-title"><img src="<?= base_url(); ?>assets/home/img/bg/bg.jpg" style="width:250px;height:150px;object-fit:cover;" alt=""></h4>
+								<h4>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-animation="bounce" data-target=".edit-tentang-kami"><i class="dripicons-pencil"></i> Edit </button>
+								</h4>
 
 							</div>
 						</div>
@@ -57,7 +40,7 @@
 
 
             <!-- Modal Edit Kontak -->
-	<div class="modal fade edit-kontak" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+	<div class="modal fade edit-tentang-kami" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered">
 			<div class="modal-content">

@@ -20,6 +20,12 @@
 								<a class="nav-link <?php echo $this->uri->segment(1) == 'Produk' ? 'active': '' ?>" href="<?= base_url(); ?>Produk" > <i class="dripicons-store"></i>Product</a>
 							</li>
 							<li class="nav-item">
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Gambar_product' ? 'active': '' ?>" href="<?= base_url(); ?>Gambar_product" > <i class="dripicons-store"></i>Gambar Produk</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <?php echo $this->uri->segment(1) == 'Jenis_product' ? 'active': '' ?>" href="<?= base_url(); ?>Jenis_product" > <i class="dripicons-store"></i>Jenis Produk</a>
+							</li>
+							<li class="nav-item">
 								<a class="nav-link <?php echo $this->uri->segment(1) == 'Tentang_kami' ? 'active': '' ?>" href="<?= base_url(); ?>Tentang_kami" ><i
 										class="dripicons-user-id"></i>Tentang kami</a>
 							</li>
