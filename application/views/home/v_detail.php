@@ -124,6 +124,14 @@
             <div class="card">
               <div class="card-body">
                 <p class="card-title"><b>100% Produk Original</b></p>
+                <form action="">
+                  <label for="">Ukuran</label>
+                  <select name="" id="" class="form-control mb-3">
+                    <option value="">Pilih Ukuran</option>
+                    <option value=""></option>
+                  </select>
+                </form>
+
                 <button type="button" class="btn btn-success"><i class="icofont-whatsapp"></i> Pesan Sekarang</button>
               </div>
             </div>
