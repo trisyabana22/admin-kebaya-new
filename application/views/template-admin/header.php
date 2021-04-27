@@ -47,6 +47,20 @@ if (!$this->session->userdata('tokoaditdantri')) {
 transform-origin: left top;
 		}
 	</style> -->
+	<style>
+		.line-clamp {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		}
+		.line-clamp-1 {
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		}
+	</style>
 </head>
 
 <body class="dark-topbar">
