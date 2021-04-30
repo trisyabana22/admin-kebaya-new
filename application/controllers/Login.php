@@ -44,7 +44,8 @@ class Login extends CI_Controller
                     'tokoaditdantri' => 'toko',
                     'level' => 'toko',
                     'id' => $user['id_toko'],
-                    'nama' => $user['nama_toko']
+                    'nama' => $user['nama_toko'],
+                    'logo' => $user['logo']
                 ];
                 $this->session->set_userdata($data);
                 $this->directpage();
@@ -59,7 +60,8 @@ class Login extends CI_Controller
                 'tokoaditdantri' => 'admin',
                 'level' => 'superadmin',
                 'id' => '1',
-                'nama' => 'ADIT TRI'
+                'nama' => 'ADIT TRI',
+                'logo' => 'apple-touch-icon.png'
             ];
             $this->session->set_userdata($data);
             $this->directpage();
@@ -73,7 +75,7 @@ class Login extends CI_Controller
     public function directpage()
     {
         // if ($_SESSION['level'] == 'superadmin') {
-        redirect('beranda');
+        redirect('produk');
         // } else {
         // redirect('cafe');
         // }

@@ -7,6 +7,7 @@ class Produk extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper(['url', 'language']);
+		$this->load->library(['form_validation']);
 	}
 	/**
 	 * Index Page for this controller.
@@ -25,7 +26,8 @@ class Produk extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('template-admin/header');
+		$data['jsfile'] = 'produk.js';
+		$this->load->view('template-admin/header', $data);
 		$this->load->view('template-admin/sidebar');
 		$this->load->view('admin/produk/v_show');
 		$this->load->view('template-admin/footer');
@@ -37,5 +39,12 @@ class Produk extends CI_Controller
 		$this->load->view('template-admin/sidebar');
 		$this->load->view('admin/produk/v_show_add');
 		$this->load->view('template-admin/footer');
+	}
+
+	public function delete()
+	{
+		$where = array('id_produk' =>  $_POST['id_produk']);
+		$res = $this->M_produk->deletedata('produk', $where);
+		echo json_encode($res);
 	}
 }

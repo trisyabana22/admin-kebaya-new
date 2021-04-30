@@ -82,7 +82,7 @@
 					</button>
 				</div>
 				<div class="modal-body bg-white">
-					<form action="">
+					<form action="<?= base_url('beranda/save'); ?>" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="judul">Edit Judul</label>
 							<input type="text" id="judul" name="judul" class="form-control" placeholder="Ketikan Judul" value="<?= $judul; ?>">
@@ -93,19 +93,19 @@
 
 						</div>
 						<div class="form-group">
-							<label for="baclground">Edit Background</label>
-							<input type="file" id="baclground" name="baclground" class="dropify" data-default-file="<?= base_url(); ?>assets/home/img/bg/<?= $background; ?>" />
+							<label for="background">Edit Background</label>
+							<input type="file" id="background" name="background" class="dropify" data-default-file="<?= base_url(); ?>assets/home/img/bg/<?= $background; ?>" />
 							<p>File Yang diizinkan: .PNG, JPG,JPEG, </p>
 						</div>
-					</form>
 				</div>
 				<div class="modal-footer bg-white">
 					<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">
 						Close
 					</button>
-					<button type="button" class="btn btn-primary waves-effect waves-light">
+					<button type="submit" class="btn btn-primary waves-effect waves-light">
 						Save changes
 					</button>
+					</form>
 				</div>
 			</div>
 			<!-- /.modal-content -->
