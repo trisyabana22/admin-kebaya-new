@@ -33,17 +33,19 @@ class Home extends CI_Controller
 	public function produk($id_kategori = '', $nama_produk = '', $urutan = '')
 	{
 		$urutan = str_replace("-", " ", $urutan);
-		$where = " where id_kategori like '%" . $id_kategori . "%' and nama_produk like '%" . $nama_produk . "%' " . $urutan . " limit 0,16";
+		$where = " where produk.id_kategori like '%" . $id_kategori . "%' and nama_produk like '%" . $nama_produk . "%' " . $urutan . " limit 0,16";
 		$data['produk'] = $this->M_produk->v_all_produk($where);
 		foreach ($data['produk'] as $produk) {
 			$stok = $this->M_produk->v_all_stok(" where id_produk='" . $produk['id_produk'] . "' and jumlah_stok > 0");
 			$dataProduk[] = [
 				'id_produk' =>  $produk['id_produk'],
 				'id_kategori' =>  $produk['id_kategori'],
+				'nama_kategori' =>  $produk['nama_kategori'],
 				'nama_produk' =>  $produk['nama_produk'],
 				'harga_produk' =>  number_format((float)$produk['harga_produk'], 0, ',', '.'),
 				'gambar_produk' =>  $produk['gambar_produk'],
 				'bahan' =>  $produk['bahan'],
+				'deskripsi' =>  $produk['deskripsi'],
 				'stok' =>  $stok,
 			];
 		}

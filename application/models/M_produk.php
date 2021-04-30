@@ -35,7 +35,7 @@ class M_produk extends CI_Model
 
     function v_all_produk($where = '')
     {
-        $query = $this->db->query("SELECT * FROM produk " . $where . "");
+        $query = $this->db->query("SELECT * FROM produk left join kategori on produk.id_kategori=kategori.id_kategori " . $where . "");
 
         return   $query->result_array();
     }

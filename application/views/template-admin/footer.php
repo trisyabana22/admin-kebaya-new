@@ -1,7 +1,6 @@
 <footer class="footer text-center text-sm-left">
-    &copy; 2021 
-    <span class="text-muted d-none d-sm-inline-block float-right">Made with <i
-            class="mdi mdi-heart text-danger"></i> by people</span>
+    &copy; 2021
+    <span class="text-muted d-none d-sm-inline-block float-right">Made with <i class="mdi mdi-heart text-danger"></i> by people</span>
 </footer>
 <!--end footer-->
 </div>
@@ -43,6 +42,21 @@
 <script src="<?= base_url(); ?>assets/admin/pages/jquery.datatable.init.js"></script>
 
 <script src="<?= base_url(); ?>assets/admin/js/app.js"></script>
+
+<script src="<?= base_url(); ?>assets/admin/plugins/datatables/fnReloadAjax.js"></script>
+<!-- Responsive examples -->
+<script src=" <?= base_url(); ?>assets/admin/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="<?= base_url(); ?>assets/admin/plugins/datatables/responsive.bootstrap4.min.js"></script>
+<script src="<?= base_url(); ?>assets/admin/pages/jquery.datatable.init.js"></script>
+<!-- validasi -->
+<script src="<?= base_url(); ?>assets/admin/plugins/validation/jquery.validate.min.js"></script>
+<!-- Sweet-Alert  -->
+<script src="<?= base_url(); ?>assets/admin/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="<?= base_url(); ?>assets/admin/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+
+<?php if (isset($jsfile)) { ?>
+    <script src="<?= base_url(); ?>assets/dinamis/<?= $jsfile; ?>"></script>
+<?php } ?>
 </body>
 
 </html>
