@@ -1,135 +1,50 @@
-function previewFile() {
-	const preview = document.querySelector('#gbrprodukna');
-	const file = document.querySelector('input[type=file]').files[0];
-	const reader = new FileReader();
-	document.querySelector('#nama_gambar').innerHTML = file.name;
-
-	reader.addEventListener("load", function () {
-		// convert image file to base64 string
-		preview.src = reader.result;
-	}, false);
-
-	if (file) {
-		reader.readAsDataURL(file);
-	}
-}
-
-function previewFile2() {
-	const preview = document.querySelector('#gbrprodukna2');
-	const file = document.querySelector('#gambar_produk2').files[0];
-	const reader = new FileReader();
-	document.querySelector('#nama_gambar2').innerHTML = file.name;
-
-	reader.addEventListener("load", function () {
-		// convert image file to base64 string
-		preview.src = reader.result;
-	}, false);
-
-	if (file) {
-		reader.readAsDataURL(file);
-	}
-}
-
 $(document).ready(function () {
-	getProduk();
-
-	function getProduk(params) {
-		$('#produkna').html(`<div class="col-lg-12 col-sm-12 col-md-12 col-12 mt-4 text-center">
-		<div class="spinner-border text-success" role="status">
-  			<span class="sr-only">Loading...</span>
-		</div>
-	  </div>`);
-		let i = 0;
-		setInterval(function () {
-			i++;
-			if (i == 1) {
-				getProduk2();
-			}
-		}, 1000);
-	}
-
-
-	function getProduk2() {
-		let id_kategori = '_';
-		let nama_produk = $('#produk-search').val();
-		let urutan = '';
-		$('#pencarian').html(nama_produk);
-		if (nama_produk == '') {
-			nama_produk = '_'
-		}
-		let str = nama_produk.replace(" ", "_");
-
-		$.getJSON(`produk/produk/${id_kategori}/${str}/${urutan}`, (data) => {
-			$("#load-produk").hide();
-			$("#produkna").html("");
-			if (data.length > 0) {
-				$.each(data, (i, produk) => {
-					// console.log(produk);
-					$("#produkna").append(`<div class="col-md-3 col-sm-6 col-12">
-					<div class="card">
-					  <img src="assets/home/img/produk/${produk.gambar_produk}" style="width: 100%; height:200px;object-fit:cover;object-position:top;" alt="">
-					  <div class="card-body">
-						<h4 class="line-clamp-1">${produk.nama_produk}</h4>
-						<h6 class="line-clamp-2">${produk.nama_kategori}</h6>
-						<h6 class="line-clamp ">${produk.deskripsi}</h6>
-						<h6 class="line-clamp ">Bahan : ${produk.bahan}</h6>
-			
-						<div class="col-sm-12 mt-4">
-						  <div class="button-group text-center">
-							<button type="button" class="btn btn-sm btn-primary" id="btn_edit" data-id_produk="${produk.id_produk}"  data-nama_produk="${produk.nama_produk}" data-id_kategori="${produk.id_kategori}" data-bahan="${produk.bahan}" data-gambar_produk="${produk.gambar_produk}"  data-deskripsi="${produk.deskripsi}"  data-toggle="modal" data-animation="bounce" data-target=".edit-beranda"><i class="dripicons-pencil"></i> Edit </button>
-							<button type="button" class="btn btn-sm btn-danger" id="btn_remove" data-id="${produk.id_produk}" ><i class="dripicons-trash"></i> Hapus </button>
-						  </div>
-						</div>
-			
-			
-			
-					  </div>
-					</div>
-				  </div>`);
-				});
-			} else {
-				$('#produkna').html(`<div class="col-lg-12 col-sm-12 col-md-12 col-12 mt-4 text-center">
-				<h4>Produk tidak tersedia :(</h4>
-			  </div>`);
-			}
-		});
-	}
-
-	// $("#portfolio-flters").on("click", function (params) {
-	// 	id_kategori = params.target.dataset.filter;
-	// 	nama_kategori = params.target.dataset.filter2;
-	// 	$("#kategori-search").val(id_kategori);
-	// 	$("#kategori").html(nama_kategori);
-	// 	getProduk();
-	// });
-
-	$("#produk-search").on("keyup", () => {
-		getProduk();
-	});
-	$("#btn-search").on("click", () => {
-		getProduk();
+	$("#tb_data").dataTable({
+		"bLengthChange": true,
+		"responsive": true,
+		"bSort": true,
+		"bProcessing": false,
+		"bDeferRender": true,
+		"aoColumns": [{
+				"sWidth": "3%",
+				"sClass": "center",
+				"bSortable": true
+			},
+			{
+				"sWidth": "40%",
+				"sClass": "center",
+				"bSortable": true
+			},
+			{
+				"sWidth": "20%",
+				"sClass": "left",
+				"bSortable": true
+			},
+			{
+				"sWidth": "20%",
+				"sClass": "left",
+				"bSortable": true
+			},
+		],
+		//"sDom": '<"top"fp>rt<"clear">', 
+		"sDom": 'Bfrtip',
+		"buttons": [],
+		"sAjaxSource": "jenis_produk/load_jenis_produk",
+		"bServerSide": false,
+		"sServerMethod": "POST",
+		"aaSorting": [
+			[0, 'asc']
+		],
+		"fnDrawCallback": function (oSettings) {
+			$('[data-tooltip="true"]').tooltip();
+		},
+		"bAutoWidth": false
 	});
 
-
-	$('#produkna').on('click', '#btn_edit', function (event) {
+	$('#tb_data').on('click', 'td #btn_remove', function (event) {
 		event.preventDefault();
+		var id_kategori = $(this).data("id");
 		console.log($(this).data());
-
-		$('#gbrproduk').html(`<img id="gbrprodukna" src="assets/home/img/produk/${$(this).data('gambar_produk')}" alt="" width="30%">`);
-		$('#nama_gambar').html($(this).data('gambar_produk'));
-		$('#id_produk').val($(this).data('id_produk'));
-		$('#nama_produk').val($(this).data('nama_produk'));
-		$('#id_kategori').val($(this).data('id_kategori'));
-		$('#bahan').val($(this).data('bahan'));
-		$('#catatan').val($(this).data('deskripsi'));
-		console.log($('#gambar_produk'));
-	});
-
-
-
-	$('#produkna').on('click', '#btn_remove', function (event) {
-		event.preventDefault();
-		var id_produk = $(this).data("id");
 		var ask = swal({
 			title: "Are you sure?",
 			text: "You will not be able to recover this imaginary file!",
@@ -145,8 +60,8 @@ $(document).ready(function () {
 		}).then((result) => {
 			if (result.value) {
 				//-------------------BELUM FIX---------delete in foreign check please ----------------------------------------------
-				$.post("Produk/delete", {
-					id_produk: id_produk
+				$.post("Jenis_produk/delete", {
+					id_kategori: id_kategori
 				});
 				Swal.fire({
 					title: "Deleted!",
@@ -158,9 +73,18 @@ $(document).ready(function () {
 					allowOutsideClick: false,
 				})
 				//-------------------BELUM FIX-------------------------------------------------------
-				getProduk();
+				// $("#tb_data").dataTable().fnReloadAjax('Jenis_produk/load_jenis_produk');
 			}
+			// $("#tb_data").dataTable().fnReloadAjax('Jenis_produk/load_jenis_produk');
 		})
+		$("#tb_data").dataTable().fnReloadAjax('Jenis_produk/load_jenis_produk');
+	});
+
+	$('#tb_data').on('click', 'td #btn_edit', function (event) {
+		event.preventDefault();
+		console.log($(this).data());
+		$('#id_kategori').val($(this).data('id_kategori'));
+		$('#nama_kategori').val($(this).data('nama_kategori'));
 	});
 
 	$('#e-form').on('submit').validate({
@@ -189,7 +113,7 @@ $(document).ready(function () {
 
 			$.ajax({
 				type: 'POST',
-				url: 'Produk/edit',
+				url: 'Jenis_produk/edit',
 				data: formData,
 				contentType: false,
 				enctype: 'multipart/form-data',
@@ -236,8 +160,9 @@ $(document).ready(function () {
 								// show_Produk();
 								$('.btnload').html('Save Changes');
 								$('.btnload').prop('disabled', false);
-								getProduk();
+								$("#tb_data").dataTable().fnReloadAjax('Jenis_produk/load_jenis_produk');
 								$('.modal').modal('hide');
+
 							}
 						})
 
@@ -264,7 +189,7 @@ $(document).ready(function () {
 								//-------------------BELUM FIX---------delete in foreign check please ----------------------------------------------
 								$.post("C_reporteror/savedata", {
 									text: resp.responseText,
-									menu: 'Produk/save'
+									menu: 'Detail_produk/save'
 								});
 								Swal.fire({
 									title: "Eror Dikirim!",
@@ -279,10 +204,10 @@ $(document).ready(function () {
 
 								//-------------------BELUM FIX-------------------------------------------------------
 								//-------------------BELUM FIX-------------------------------------------------------
-								// $('.modal').modal('hide');
+								$('.modal').modal('hide');
 								//-------------------BELUM FIX-------------------------------------------------------
 							} else {
-								// $('.modal').modal('hide');
+								$('.modal').modal('hide');
 							}
 						})
 					}
@@ -293,6 +218,7 @@ $(document).ready(function () {
 			return false;
 		}
 	});
+
 	$('#i-form').on('submit').validate({
 		ignore: "",
 		rules: {
@@ -319,7 +245,7 @@ $(document).ready(function () {
 
 			$.ajax({
 				type: 'POST',
-				url: 'Produk/save',
+				url: 'Jenis_produk/save',
 				data: formData,
 				contentType: false,
 				enctype: 'multipart/form-data',
@@ -366,8 +292,9 @@ $(document).ready(function () {
 								// show_Produk();
 								$('.btnload').html('Save Changes');
 								$('.btnload').prop('disabled', false);
-								getProduk();
+								$("#tb_data").dataTable().fnReloadAjax('Jenis_produk/load_jenis_produk');
 								$('.modal').modal('hide');
+
 							}
 						})
 
@@ -394,7 +321,7 @@ $(document).ready(function () {
 								//-------------------BELUM FIX---------delete in foreign check please ----------------------------------------------
 								$.post("C_reporteror/savedata", {
 									text: resp.responseText,
-									menu: 'Produk/save'
+									menu: 'Jenis_produk/save'
 								});
 								Swal.fire({
 									title: "Eror Dikirim!",
@@ -409,10 +336,10 @@ $(document).ready(function () {
 
 								//-------------------BELUM FIX-------------------------------------------------------
 								//-------------------BELUM FIX-------------------------------------------------------
-								// $('.modal').modal('hide');
+								$('.modal').modal('hide');
 								//-------------------BELUM FIX-------------------------------------------------------
 							} else {
-								// $('.modal').modal('hide');
+								$('.modal').modal('hide');
 							}
 						})
 					}

@@ -5,13 +5,13 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>Portfolio Details - Bethany Bootstrap Template</title>
+  <title><?= $detail['nama_produk']; ?></title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
 
   <!-- Favicons -->
-  <link href="<?= base_url(); ?>assets/home/img/favicon.png" rel="icon" />
-  <link href="<?= base_url(); ?>assets/home/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="<?= base_url(); ?>assets/home/img/logo/<?= $logo; ?>" rel="icon" />
+  <link href="<?= base_url(); ?>assets/home/img/logo/<?= $logo; ?>" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
@@ -46,7 +46,7 @@
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto">
           <h1 class="text-light">
-            <a href="index.html"><span>Kebaya</span></a>
+            <a href="<?= base_url(); ?>"><span>Kebaya</span></a>
           </h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="<?= base_url(); ?>assets/home/img/produkng" alt="" class="img-fluid"></a>-->
@@ -54,7 +54,7 @@
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
-            <li><a href="index.html">Beranda</a></li>
+            <!-- <li><a href="index.html">Beranda</a></li> -->
           </ul>
         </nav>
         <!-- .nav-menu -->
@@ -79,24 +79,31 @@
 
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
+
         <div class="row">
           <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="100">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                <?php
+                $i = 1;
+                foreach ($gambar as $gb) {
+                  echo '<li data-target="#carouselExampleIndicators" data-slide-to="' . $i++ . '"></li>';
+                }
+                ?>
+
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="<?= base_url(); ?>assets/home/img/produk/1.jpg" class="d-block w-100" alt="" />
+                  <img src="<?= base_url(); ?>assets/home/img/produk/<?= $detail['gambar_produk']; ?>" class="d-block w-100" alt="" />
                 </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="<?= base_url(); ?>assets/home/img/produk/4.jpg" alt="Second slide" />
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block" src="<?= base_url(); ?>assets/home/img/produk/2.jpg" alt="Third slide" />
-                </div>
+                <?php
+                foreach ($gambar as $gbr) {
+                  echo '<div class="carousel-item"><img class="d-block w-100" src="' . base_url() . 'assets/home/img/produk/' . $gbr['gambar_produk'] . '" alt="Second slide" /></div>';
+                }
+                ?>
+
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -111,12 +118,32 @@
           <div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
             <div class="section-title">
               <h2>Detail Produk</h2>
-              <h3>Set kebaya bermotif bunga yang feminin dengan aksen lace trim</h3>
-              <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"><b>Rp 320.000</b></h4>
-              <p><b>Bahan :</b> Katun</p>
-              <p><b>Ukuran :</b> S/M/L/XL/XXXL</p>
-              <p><b>Stok :</b> 23 Pcs</p>
-              <p>Free Ramadhan Sale</p>
+              <h3><?= $detail['nama_produk']; ?></h3>
+              <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+                <b>
+                  <?php
+                  if ($detail['min_harga'] == $detail['max_harga']) {
+                    echo "Rp " . number_format((float)$detail['min_harga'], 0, ',', '.');
+                  } else {
+                    echo "Rp " . number_format((float)$detail['min_harga'], 0, ',', '.');
+                    echo " - Rp " . number_format((float)$detail['max_harga'], 0, ',', '.');
+                  }
+                  ?>
+                </b>
+              </h4>
+              <p><b>Bahan :</b> <?= $detail['bahan']; ?></p>
+              <p><b>Ukuran : </b>
+                <select id="ukuran">
+                  <?php
+                  foreach ($stok as $ukuran) {
+                    echo "<option value='" . $ukuran['id_stok'] . "' data-id='" . $ukuran['id_stok'] . "'>" . $ukuran['ukuran_stok'] . "</option>";
+                  }
+                  ?>
+                </select>
+              </p>
+              <p id="stokna"><b>Stok :</b> <?= $stok[0]['jumlah_stok']; ?> Pcs</p>
+              <p id="hargana"><b>Harga :</b> Rp <?= number_format((float)$stok[0]['harga'], 0, ',', '.'); ?></p>
+              <p><?= $detail['deskripsi']; ?></p>
             </div>
             <h4></h4>
           </div>
@@ -124,15 +151,15 @@
             <div class="card">
               <div class="card-body">
                 <p class="card-title"><b>100% Produk Original</b></p>
-                <form action="">
+                <!-- <form action="">
                   <label for="">Ukuran</label>
                   <select name="" id="" class="form-control mb-3">
                     <option value="">Pilih Ukuran</option>
                     <option value=""></option>
                   </select>
-                </form>
+                </form> -->
 
-                <button type="button" class="btn btn-success"><i class="icofont-whatsapp"></i> Pesan Sekarang</button>
+                <a target="_blank" href="<?= base_url('home/wa/'); ?>Apakah produk <?= $detail['nama_produk']; ?> tersedia?"> <button type="button" class="btn btn-success"><i class="icofont-whatsapp"></i> Pesan Sekarang</button></a>
               </div>
             </div>
           </div>
@@ -145,6 +172,8 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
+
+
     <div class="container d-md-flex py-4">
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
@@ -159,11 +188,10 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <?php if ($twitter <> '') { ?><a href="https://twitter.com/<?= $twitter; ?>" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a> <?php } ?>
+        <?php if ($facebook <> '') { ?><a href="https://facebook.com/<?= $facebook; ?>" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a> <?php } ?>
+        <?php if ($instagram <> '') { ?><a href="https://instagram.com/<?= $instagram; ?>" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a> <?php } ?>
+        <?php if ($youtube <> '') { ?><a href="https://youtube.com/<?= $youtube; ?>" target="_blank" class="google-plus"><i class="bx bxl-youtube"></i></a> <?php } ?>
       </div>
     </div>
   </footer>
@@ -185,6 +213,7 @@
 
   <!-- Template Main JS File -->
   <script src="<?= base_url(); ?>assets/home/js/main.js"></script>
+  <script src="<?= base_url(); ?>assets/dinamis/detail.js"></script>
 </body>
 
 </html>
