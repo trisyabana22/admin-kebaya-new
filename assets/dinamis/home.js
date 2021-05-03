@@ -34,15 +34,15 @@ $(document).ready(function () {
 				$.each(data, (i, produk) => {
 					// console.log(produk);
 					$("#produkna").append(`<div class="col-lg-3 col-sm-6 col-md-4 col-6">
-									<a href="home/detail/${produk.id_produk}" style="color: #444444">
+									<a href="${produk.url}" style="color: #444444">
 									  <div class="card mt-4 shadow-sm border border-white sudut">
 										<div class="bg-food" style="background-image: url('assets/home/img/produk/${produk.gambar_produk}');">
 											
 										</div>
 										<div class="card-body">
 										  <h6 class="card-title line-clamp">${produk.nama_produk}</h6>
-										  <p class="card-text"><b>Rp ${produk.harga_produk}</b></p>
-										  <span class="badge badge-success">Stok 20 pcs</span>
+										  <p class="card-text"><b>Rp ${produk.harga}</b></p>
+										  <span class="badge badge-${produk.color}">Stok ${produk.jumlah_stok} pcs</span>
 										</div>
 									  </div>
 									</a>

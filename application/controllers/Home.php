@@ -36,8 +36,15 @@ class Home extends CI_Controller
 		$where = " where produk.id_kategori like '%" . $id_kategori . "%' and nama_produk like '%" . $nama_produk . "%' " . $urutan . " limit 0,16";
 		$data['produk'] = $this->M_produk->v_all_produk($where);
 		foreach ($data['produk'] as $produk) {
-			$stok = $this->M_produk->v_all_stok(" where id_produk='" . $produk['id_produk'] . "' and jumlah_stok > 0");
+			$stok = $this->M_produk->v_all_stok_min(" where id_produk='" . $produk['id_produk'] . "' and jumlah_stok > 0");
+			$url = 'home/detail/' . $produk['id_produk'];
+			$color = 'success';
+			if ($stok[0]['jumlah_stok'] == null) {
+				$url = "#produk";
+				$color = 'danger';
+			}
 			$dataProduk[] = [
+				'url' =>  $url,
 				'id_produk' =>  $produk['id_produk'],
 				'id_kategori' =>  $produk['id_kategori'],
 				'nama_kategori' =>  $produk['nama_kategori'],
@@ -46,7 +53,9 @@ class Home extends CI_Controller
 				'gambar_produk' =>  $produk['gambar_produk'],
 				'bahan' =>  $produk['bahan'],
 				'deskripsi' =>  $produk['deskripsi'],
-				'stok' =>  $stok,
+				'harga' =>  number_format((float)(1 * $stok[0]['harga']), 0, ',', '.'),
+				'jumlah_stok' =>  1 * $stok[0]['jumlah_stok'],
+				'color' => $color
 			];
 		}
 
@@ -57,54 +66,48 @@ class Home extends CI_Controller
 		}
 	}
 
+	public function wa($message = '')
+	{
+		$data = $data = $this->M_toko->v_toko('1');
+		$wa = '62' . substr($data['no_wa'], 1, $data['no_wa']);
+		$text = trim(preg_replace('/\s\s+/', ' ', $message));
+
+		function isMobile()
+		{
+			return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+		}
+
+		// Use the function
+		if (isMobile()) {
+			// Do something for only mobile users
+			redirect('https://wa.me/' . $wa . '&text=' . $text);
+		} else {
+			// Do something for only desktop users
+			redirect('https://web.whatsapp.com/send?phone=' . $wa . '&text=' . $text);
+		}
+	}
+
 	public function detail($id_produk = '')
 	{
-		$this->load->view('home/v_detail');
-	}
+		$data = $this->M_toko->v_toko('1');
+		$data['detail'] = $this->M_produk->v_all_produk_detail_2("WHERE produk.id_produk='" . $id_produk . "'");
+		$data['stok'] = $this->M_produk->v_all_produk_detail_3("WHERE produk.id_produk='" . $id_produk . "'");
+		$data['gambar'] = $this->M_produk->v_all_gambar("where produk.id_produk='" . $id_produk . "'");
 
-	public function load_detail_produk($id_produk = '')
-	{
-		$dataProduk = $this->M_produk->v_all_produk_detail();
-		$no = 0;
-		foreach ($dataProduk as $produk) {
-			$data['table'][] = [
-				$no,
-				$produk['nama_produk'],
-				$produk['ukuran_stok'],
-				$produk['harga'],
-				$produk['jumlah_stok'],
-				'button',
-			];
-
-			$no++;
+		if ($data['stok']) {
+			$this->load->view('home/v_detail', $data);
+		} else {
+			redirect('Home');
 		}
-		echo json_encode($data);
 	}
 
-	public function load_jenis_produk($id_produk = '')
+	public function stok_detail($id_stok = '')
 	{
-		$dataProduk = $this->M_produk->group_produk();
-		$no = 0;
-		foreach ($dataProduk as $produk) {
-			$data['table'][] = [
-				$no,
-				$produk['nama_kategori'],
-				$produk['total'],
-				'button',
-			];
-
-			$no++;
-		}
-		echo json_encode($data);
-	}
-
-	public function load_gambar_produk($id_produk = '')
-	{
-		$data['gambar'] = $this->M_produk->v_all_gambar();
-		echo json_encode($data);
-	}
-
-	public function tes($id_produk = '')
-	{
+		$data =  $this->M_produk->v_all_stok(" where id_stok='" . $id_stok . "'")[0];
+		$dt = [
+			'harga' => number_format((float)$data['harga'], 0, ',', '.'),
+			'stok' => $data['jumlah_stok']
+		];
+		echo json_encode($dt);
 	}
 }
